@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     libldap2-dev \
     && apt-get clean -y
 
-RUN pip --no-cache-dir install caravel==0.11.0 \
+RUN pip --no-cache-dir install caravel==0.12.0 \
     mysqlclient \
     psycopg2==2.6.1 \
     pymssql \
