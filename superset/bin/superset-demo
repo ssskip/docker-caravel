@@ -1,6 +1,6 @@
 #!/bin/sh
 
-caravel-init
+superset-init
 
 # Load some data to play with
-caravel load_examples
+superset load_examples
