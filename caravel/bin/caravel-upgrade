@@ -1,5 +1,0 @@
-#!/bin/sh
-
-pip install --upgrade caravel 
-caravel db upgrade
-caravel init

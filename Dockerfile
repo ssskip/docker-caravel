@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     libldap2-dev \
     && apt-get clean -y
 
-RUN pip --no-cache-dir install caravel==0.12.0 \
+RUN pip --no-cache-dir install superset==0.13.2 \
     mysqlclient \
     psycopg2==2.6.1 \
     pymssql \
@@ -19,24 +19,24 @@ RUN pip --no-cache-dir install caravel==0.12.0 \
 
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
-    PATH=$PATH:/home/caravel/bin \
-    PYTHONPATH=/home/caravel/caravel_config.py:$PYTHONPATH
+    PATH=$PATH:/home/superset/bin \
+    PYTHONPATH=/home/superset/superset_config.py:$PYTHONPATH
 
 
-WORKDIR /home/caravel
-COPY caravel .
-RUN groupadd -r caravel && \
-    useradd -r -m -g caravel caravel && \
-    mkdir /home/caravel/db && \
-    chown -R caravel:caravel /home/caravel && \
+WORKDIR /home/superset
+COPY superset .
+RUN groupadd -r superset && \
+    useradd -r -m -g superset superset && \
+    mkdir /home/superset/db && \
+    chown -R superset:superset /home/superset && \
     chmod +x ./bin/*
 
-USER caravel
+USER superset
 
 
 
 EXPOSE 8088
-ENTRYPOINT ["caravel"]
+ENTRYPOINT ["superset"]
 CMD ["runserver"]
 
 

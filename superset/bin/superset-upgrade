@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pip install --upgrade superset 
+superset db upgrade
+superset init

@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Create an admin user
-fabmanager create-admin --app caravel
+fabmanager create-admin --app superset
 
 # Initialize the database
-caravel db upgrade
+superset db upgrade
 
 # Create default roles and permissions
-caravel init
+superset init
