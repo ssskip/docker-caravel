@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     libldap2-dev \
     && apt-get clean -y
 
-RUN pip --no-cache-dir install superset==0.14.1 \
+RUN pip --no-cache-dir install superset==0.15.1 \
     mysqlclient \
     psycopg2==2.6.1 \
     pymssql \
